@@ -1,8 +1,13 @@
-function Todos() {
-  return <ul>
-    <li>Learn React</li>
-    <li>Learn TypeScript</li>
-  </ul>
-}
+type TodosProps = { items: string[] };
+
+const Todos = (props: TodosProps) => {
+  return (
+    <ul>
+      {props.items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+};
 
 export default Todos;
